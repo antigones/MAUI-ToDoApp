@@ -1,0 +1,33 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToDoApp.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+
+    <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+        <StackLayout>
+            <Grid RowSpacing="25" RowDefinitions="Auto,*">
+
+                <Label Text="ToDo List"
+                    Grid.Row="0"
+                    SemanticProperties.HeadingLevel="Level1"
+                    FontSize="32"
+                    HorizontalOptions="CenterAndExpand" />
+
+                <CollectionView Grid.Row="1" x:Name="TodoView" ItemsSource="{Binding ToDoItems}" EmptyView="No items to display" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10" RowDefinitions="Auto, *">
+                                <Label Grid.Row="0"
+                                   Text="{Binding Title}"
+                                   FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                   Text="{Binding Completed}"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

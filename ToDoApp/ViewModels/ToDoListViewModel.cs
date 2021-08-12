@@ -16,11 +16,11 @@ namespace ToDoApp.ViewModels
     public class ToDoListViewModel
     {
 
-        public ObservableCollection<ToDoItem> ToDoItems { get; set; }
+        public ObservableCollection<ToDoItemViewModel> ToDoItems { get; set; }
 
         public ToDoListViewModel()
         {
-            ToDoItems = new ObservableCollection<ToDoItem>();
+            ToDoItems = new ObservableCollection<ToDoItemViewModel>();
             PopulateList();
         }
 
@@ -32,7 +32,7 @@ namespace ToDoApp.ViewModels
 
             foreach (ToDoItem todo in todos)
             {
-                ToDoItems.Add(todo);
+                ToDoItems.Add(new ToDoItemViewModel(todo));
             }
 
         }

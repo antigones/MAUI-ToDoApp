@@ -15,6 +15,5 @@ namespace ToDoApp
 			BindingContext = ToDoListViewModel;
 		}
 
-		
 	}
 }

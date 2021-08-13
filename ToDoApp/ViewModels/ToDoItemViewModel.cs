@@ -36,5 +36,6 @@ namespace ToDoApp.ViewModels
                 _completed = false;
             }
         }
+
     }
 }

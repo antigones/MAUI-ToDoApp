@@ -15,5 +15,10 @@ namespace ToDoApp
 			BindingContext = ToDoListViewModel;
 		}
 
+        private async void OnAddToDoItemClicked(object sender, EventArgs args)
+		{
+			await ToDoListViewModel.addToDoItem();
+		}
+
 	}
 }

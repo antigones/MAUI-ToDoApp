@@ -9,32 +9,38 @@ namespace ToDoApp.ViewModels
 {
     public class ToDoItemViewModel
     {
+        private readonly ToDoItem _toDoItem;
+
         public ToDoItemViewModel(ToDoItem toDoItem)
         {
-            _title = toDoItem.Title;
-            _completed = toDoItem.Completed;
-           
+            _toDoItem = toDoItem;
+
         }
 
-        private string _title;
+
         public string Title
         {
-            get { return _title; }
-            set { _title = value; }
+            get { return _toDoItem.Title; }
+            set { _toDoItem.Title = value; }
         }
 
-        private bool _completed;
+
         public string Completed
         {
-            get {
-                if (_completed) return "Completed";
+            get
+            {
+                if (_toDoItem.Completed) return "Completed";
                 return "Not Completed";
             }
-            set {
+            set
+            {
                 if (value == "Completed")
-                    _completed = true;
-                _completed = false;
+                    _toDoItem.Completed = true;
+                _toDoItem.Completed = false;
             }
         }
+
+
+
     }
 }

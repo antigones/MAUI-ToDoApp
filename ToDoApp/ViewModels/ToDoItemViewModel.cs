@@ -17,7 +17,11 @@ namespace ToDoApp.ViewModels
            
         }
 
-       
+        public ToDoItem ToDoItem
+        {
+            get {  return _toDoItem; }
+        }
+
         public string Title
         {
             get { return _toDoItem.Title; }

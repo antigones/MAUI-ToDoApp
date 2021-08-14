@@ -17,7 +17,8 @@ namespace ToDoApp
 
         private async void OnAddToDoItemClicked(object sender, EventArgs args)
 		{
-			await ToDoListViewModel.addToDoItem();
+            await Navigation.PushAsync(new ToDoItemAddPage());
+			
 		}
 
 	}

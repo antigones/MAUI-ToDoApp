@@ -45,13 +45,14 @@ namespace ToDoApp.ViewModels
             return todos;
         }
 
-        public async Task<ObservableCollection<ToDoItemViewModel>> addToDoItem()
+        public async Task<ObservableCollection<ToDoItemViewModel>> addToDoItem(ToDoItem item)
         {
-            ToDoItem item = new ToDoItem()
+            /*ToDoItem item = new ToDoItem()
             {
                 Title = "New Item",
                 Completed = false
             };
+            */
 
             string json = JsonSerializer.Serialize<ToDoItem>(item);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");

@@ -5,7 +5,7 @@
 
     <ScrollView Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
         <StackLayout>
-            <Grid RowSpacing="25" RowDefinitions="Auto,Auto,*">
+            <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,*">
 
                 <Label Text="Add ToDo Item"
                     Grid.Row="0"
@@ -13,9 +13,20 @@
                     FontSize="32"
                     Padding="10"
                     HorizontalOptions="CenterAndExpand" />
-                <Entry Grid.Row="1" x:Name="text" Text="" Placeholder="Put ToDoItem text here"/>
-                
-                
+                <Entry Grid.Row="1" x:Name="Title" Text="{Binding Title, Mode=TwoWay}" Placeholder="Put ToDoItem text here"/>
+
+                <Picker x:Name="Completed" SelectedItem="{Binding Completed, Mode=TwoWay}" Grid.Row="2" Title="Select a ToDo status">
+                    <Picker.Items>
+                        <x:String>Not Completed</x:String>
+                        <x:String>Completed</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Button Grid.Row="3" Text="Add a ToDo"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
+                Clicked="AddToDoItem"
+                />
             </Grid>
         </StackLayout>
     </ScrollView>
